@@ -6,7 +6,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: nginx
+    app: nginx # The app name is coming from nginx.yaml 
   ports:
   - port: 80
     targetPort: 80
