@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Latte2017/kubernetes_manifests.git  # Replace with your actual repo URL
     targetRevision: HEAD
-    path: manifests/nginx
+    path: nginx
   destination:
     server: https://kubernetes.default.svc
     namespace: production
