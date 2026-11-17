@@ -5,23 +5,4 @@ metadata:
   namespace: production
 data:
   nginx.conf: |
-    events { worker_connections 1024; }
-    http {
-        server {
-            listen 80;
-
-            location / {
-                auth_request /verify;
-                return 200 'Hello from Helm-managed Nginx!\n';
-                add_header Content-Type text/plain;
-            }
-
-            location = /verify {
-                internal;
-                proxy_pass http://auth-service.production.svc.cluster.local/;
-                proxy_pass_request_body off;
-                proxy_set_header Content-Length "";
-                proxy_set_header X-Original-URI $request_uri;
-            }
-        }
-    }
+    {{ .Files.Get "files/nginx.conf" | indent 4 }}
