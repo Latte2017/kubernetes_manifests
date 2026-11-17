@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/your-gitops-repo.git  # Replace with your actual repo URL
+    repoURL: https://github.com/Latte2017/kubernetes_manifests.git  # Replace with your actual repo URL
     targetRevision: HEAD
     path: manifests/nginx
   destination:
