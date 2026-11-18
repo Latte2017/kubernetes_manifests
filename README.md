@@ -113,6 +113,22 @@ spec:
 kubectl apply -f argocd/root.yaml
 ```
 
+### Accessing ArgoCD and Generating a Token
+Forward the ArgoCD server service to localhost:
+
+```bash
+kubectl port-forward -n argocd svc/argocd-server 8080:443
+```
+
+Username is admin
+Password is 
+
+```
+kubectl -n argocd get secret argocd-initial-admin-secret   -o jsonpath='{.data.password}' | base64 -d; echo
+```
+
+The CLI prints the password once. Store it securely and do not commit or share it.
+
 ---
 
 ## 3. Post-Reboot Startup Checklist
